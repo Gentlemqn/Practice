@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Planner MVP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-container">
+    
+    <!-- ЭКРАН 1: РЕГИСТРАЦИЯ -->
+    <section id="screen-auth" class="screen active">
+        <h2>Регистрация</h2>
+        <div class="form-group">
+            <input type="text" id="reg-name" placeholder="Ваше имя">
+            <input type="email" id="reg-email" placeholder="Email">
+            <input type="password" id="reg-pass" placeholder="Пароль">
+            <button class="btn-main" onclick="auth()">Войти в планер</button>
+        </div>
+    </section>
+
+    <!-- ЭКРАН 2: ПЛАНЕР -->
+    <section id="screen-planner" class="screen">
+        <div class="stats-bar">
+            <div class="stat-item">❤️ <span id="lives-count">3</span></div>
+            <div class="stat-item">💰 <span id="invest-sum">0</span>₽</div>
+        </div>
+
+        <h3>Мои задачи</h3>
+        <div id="task-list" class="task-container">
+            <!-- Задачи будут появляться здесь -->
+        </div>
+
+        <div class="add-task-section">
+            <h4>Новое дело</h4>
+            <input type="text" id="task-input" placeholder="Что нужно сделать?">
+            <input type="date" id="date-input">
+            <button class="btn-main" onclick="addTask()">Добавить задачу</button>
+        </div>
+
+        <button id="sub-btn" class="btn-sub" onclick="toggleSubscription()">
+            Подписка: <span id="sub-status">Не активна</span>
+        </button>
+    </section>
+
+    <!-- ЭКРАН 3: GAME OVER -->
+    <section id="screen-over" class="screen">
+        <div class="game-over-content">
+            <h1>💀 GAME OVER</h1>
+            <p>Вы потеряли все жизни из-за прокрастинации.</p>
+            <button class="btn-main" onclick="location.reload()">Начать заново</button>
+<;/div>
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
